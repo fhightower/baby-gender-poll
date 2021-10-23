@@ -1,1 +1,1 @@
-web: gunicorn ioc_finder_gui.ioc_finder_gui:app --log-file=-
+web: gunicorn baby_gender_poll.poll:app --log-file=-
