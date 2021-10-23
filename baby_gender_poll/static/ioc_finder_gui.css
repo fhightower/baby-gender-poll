@@ -36,6 +36,10 @@ a {
     /*text-decoration-style: dotted;*/
 }
 
+.info {
+    color: green;
+}
+
 .error {
     color: red;
 }

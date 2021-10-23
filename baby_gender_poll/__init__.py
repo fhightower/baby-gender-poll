@@ -1,1 +1,1 @@
-from . import ioc_finder_gui
+from . import poll

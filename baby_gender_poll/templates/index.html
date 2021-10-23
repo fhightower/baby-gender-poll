@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
+
+Hi!
+
 {% block content %}
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
@@ -9,11 +12,14 @@
     {% endwith %}
 
     <div>
-        Enter some text below from which indicators of compromise will be parsed using the <a href="https://github.com/fhightower/ioc-finder">https://github.com/fhightower/ioc-finder</a> project:
+        Place your vote!
         <br><br>
-        <form action="{{ url_for('find_iocs') }}" method="post">
-            <textarea type="text" name="text" placeholder="Enter some text from which indicators of compromise will be parsed..." rows="20"></textarea>
-            <input type="submit" class="button blue">
+        <form action="{{ url_for('save') }}" method="post">
+          <input type="radio" id="boy" name="gender" value="boy">
+          <label for="boy">Boy</label><br>
+          <input type="radio" id="girl" name="gender" value="girl">
+          <label for="girl">Girl</label><br>
+          <input type="submit" class="button blue">
         </form>
 
         <br><br>

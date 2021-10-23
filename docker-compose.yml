@@ -8,38 +8,10 @@ services:
       context: .
     volumes:
       - ./:/code
-      - ~/.gitconfig:/root/.gitconfig
 
   # a fully loaded development environment to test new code
   dev:
     <<: *base
-    command: ipython
-
-  mkdocs:
-    <<: *base
-    entrypoint: "mkdocs"
+    command: python baby_gender_poll/poll.py
     ports:
-      - "8000:8000"
-    command: ["serve", "--dev-addr=0.0.0.0:8000"]
-
-  bump-patch:
-    <<: *base
-    command: bumpversion patch
-
-  bump-minor:
-    <<: *base
-    command: bumpversion minor
-
-  bump-major:
-    <<: *base
-    command: bumpversion major
-
-  # run tests
-  test:
-    <<: *base
-    command: pytest
-
-  # run linters
-  lint:
-    <<: *base
-    entrypoint: ./docker/lint.sh
+      - 5000:5000
